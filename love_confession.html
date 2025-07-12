@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +15,7 @@
       margin: 0;
       overflow: hidden;
     }
+
     .love-container {
       text-align: center;
       position: relative;
@@ -23,17 +23,20 @@
       height: 100%;
       overflow: hidden;
     }
+
     #main-img {
       width: 220px;
       margin-bottom: 15px;
       border-radius: 15px;
       transition: 0.3s ease-in-out;
     }
+
     h2 {
       color: #d63384;
       margin: 10px 0;
       font-size: 24px;
     }
+
     button {
       padding: 10px 25px;
       font-size: 18px;
@@ -43,15 +46,18 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+
     .yes-btn {
       background-color: #ff4d88;
       color: white;
     }
+
     .no-btn {
       background-color: #ffc2d1;
       color: brown;
       position: absolute;
     }
+
     #message {
       margin-top: 20px;
       font-size: 20px;
@@ -59,9 +65,11 @@
       font-weight: bold;
       display: none;
     }
+
     #preload {
       display: none;
     }
+
     .heart {
       position: absolute;
       bottom: 0;
@@ -69,6 +77,7 @@
       animation: floatUp 3s linear forwards;
       opacity: 0;
     }
+
     @keyframes floatUp {
       0% { transform: translateY(0); opacity: 1; }
       100% { transform: translateY(-100vh); opacity: 0; }
@@ -82,11 +91,17 @@
     <button class="yes-btn" onclick="showLove()">Yes 🥰</button>
     <button class="no-btn" id="noBtn">No 🙈</button>
     <div id="message">I know this Laila🎀🥰</div>
+
+    <!-- Preload second image -->
     <img id="preload" src="https://i.ibb.co/DPZcftGh/Cutie-02.jpg" alt="Preload" />
-    <audio id="bg-music" src="ik_kudi_full_clip.mp3"></audio>
+
+    <!-- Audio with GitHub RAW link -->
+    <audio id="bg-music" src="https://raw.githubusercontent.com/DarkXworker/mylaila-/main/ik_kudi_full_clip.mp3"></audio>
   </div>
+
   <script>
     const noBtn = document.getElementById('noBtn');
+
     function moveButton() {
       const btnWidth = noBtn.offsetWidth;
       const btnHeight = noBtn.offsetHeight;
@@ -97,21 +112,26 @@
       noBtn.style.left = `${x}px`;
       noBtn.style.top = `${y}px`;
     }
+
     noBtn.addEventListener('mouseenter', moveButton);
     noBtn.addEventListener('touchstart', moveButton);
     noBtn.addEventListener('click', (e) => {
       e.preventDefault();
       moveButton();
     });
+
     function showLove() {
       const img = document.getElementById('main-img');
       const msg = document.getElementById('message');
       const music = document.getElementById('bg-music');
+
       msg.style.display = "block";
       music.play();
+
       setTimeout(() => {
         img.src = "https://i.ibb.co/DPZcftGh/Cutie-02.jpg";
       }, 2500);
+
       for (let i = 0; i < 30; i++) {
         const heart = document.createElement("div");
         heart.className = "heart";
